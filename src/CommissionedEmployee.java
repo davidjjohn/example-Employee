@@ -6,15 +6,19 @@ public class CommissionedEmployee extends Employee {
 
     public CommissionedEmployee(String name, double baseSalary, double commissionRate){
         super(name);
+
+        assert(baseSalary>=0) :  "Illegal baseSalary";
         this.baseSalary = baseSalary;
-        this.commissionRate = commissionRate;
+        this.setcommissionRate(commissionRate);
     }
 
     public void setcommissionRate(double rate){
+        assert(rate>=0.01 && rate <= .25): "Illegal commission rate";
         this.commissionRate = rate;
     }
 
     public void setsalesVolume(double volume){
+        assert(volume>=0): "Illegal sales amount";
         this.salesVolume = volume;
     }
 

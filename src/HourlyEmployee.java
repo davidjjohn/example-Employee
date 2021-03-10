@@ -26,7 +26,9 @@ public class HourlyEmployee extends Employee{
     }
 
     // setter for hoursWorked
-    public void sethoursWorked(double hours){ this.hoursWorked = Math.max(hours,this.hoursWorked); }
+    public void sethoursWorked(double hours){
+        assert(hours>=0 && hours<=100): "Illegal number of hours";
+        this.hoursWorked = Math.max(hours,this.hoursWorked); }
 
     // getPay() implementation required by abstract Employee getPay()
     public double getPay(){
